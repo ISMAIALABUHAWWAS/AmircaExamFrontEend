@@ -2,11 +2,8 @@
 export default defineNuxtConfig({
     runtimeConfig: {
         // Private environment variables are available only on the server-side
-        s3Bucket: process.env.S3_BUCKET, // Keep this private if it's sensitive
+        s3Bucket: process.env.AWS_ACCESS_KEY_ID, // Keep this private if it's sensitive
         // publicRuntimeConfig is for variables that should be available to the client
-        public: {
-            API_BASE_URL: process.env.S3_BUCKET || "http://localhost:8000/", // Fallback URL for public access
-        },
     },
 
     ssr: false,
