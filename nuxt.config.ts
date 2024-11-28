@@ -4,6 +4,12 @@ export default defineNuxtConfig({
         // Private environment variables are available only on the server-side
         s3Bucket: process.env.AWS_ACCESS_KEY_ID, // Keep this private if it's sensitive
         // publicRuntimeConfig is for variables that should be available to the client
+        public: {
+            API_BASE_URL: process.env.API_BASE_URL || "https://localhost:8000/",
+            WS_URL:
+                process.env.WS_URL ||
+                "wss://sea-turtle-app-4k2v4.ondigitalocean.app:24679/_nuxt/",
+        },
     },
 
     ssr: false,
